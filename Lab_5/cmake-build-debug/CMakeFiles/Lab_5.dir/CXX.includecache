@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_5/node1.cpp
+node1.h
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_5/node1.h
+cassert
+-
+cstdlib
+-
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_5/node1.h
+cstdlib
+-
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_5/sequence3.cpp
+assert.h
+-
+sequence3.h
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_5/sequence3.h
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_5/sequence3.h
+cstdlib
+-
+node1.h
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_5/node1.h
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_5/sequence_exam3.cpp
+iostream
+-
+cstdlib
+-
+sequence3.h
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_5/sequence3.h
+

@@ -1,0 +1,35 @@
+//Author: Muhammad Ali
+//Lab# 11
+//Priority Queue Using Max Heap
+
+template <typename T>
+priority_queue<T>::priority_queue() {
+
+}
+
+template <typename T>
+void priority_queue<T>::pop() {
+    assert(!empty());
+    h.remove();
+}
+
+template <typename T>
+void priority_queue<T>::push (const T& item) {
+    h.insert(item);
+}
+
+template <typename T>
+bool priority_queue<T>::empty () const {
+    return size() == 0;
+}
+
+template <typename T>
+size_t priority_queue<T>::size() const {
+    return h.size();
+}
+
+template <typename T>
+T priority_queue<T>::top() const {
+    assert(!empty());
+    return h.max();
+}

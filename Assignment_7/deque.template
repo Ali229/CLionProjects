@@ -1,0 +1,134 @@
+//Author: Muhammad Ali
+//Assignment #7
+//Deque using LinkedList
+#include <cassert>
+
+using namespace std;
+
+//=========================== Constructor ===========================//
+template <typename T>
+deque<T>::deque() {
+    first = NULL;
+    last = NULL;
+    count = 0;
+}
+//=========================== Destructor ============================//
+template <typename T>
+deque<T>::~deque() {
+    list_clear(first);
+}
+//=========================== Copy Constructor ======================//
+template <typename T>
+deque<T>::deque(const deque<T>& dq) {
+    list_copy(dq.first, first, last);
+    count = dq.count;
+}
+//=========================== Equal Operator ========================//
+template <typename T>
+deque<T>& deque<T>::operator = (const deque<T>& dq) {
+    if(this != &dq) {
+        list_clear(first);
+        list_copy(dq.first, first, last);
+        count = dq.count;
+    }
+    return *this;
+}
+//=========================== Front =================================//
+template <typename T>
+T& deque<T>::front() {
+    assert(!empty());
+    return first -> data();
+}
+//=========================== Front Const ===========================//
+template <typename T>
+T deque<T>::front() const {
+    assert(!empty());
+    return first -> data();
+}
+//=========================== Back ==================================//
+template <typename T>
+T& deque<T>::back() {
+    assert(!empty());
+    return last-> data();
+}
+//=========================== Back Const ============================//
+template <typename T>
+T deque<T>::back() const {
+    assert(!empty());
+    return last -> data();
+}
+//=========================== Push Front ============================//
+template <typename T>
+void deque<T>::push_front (const T& entry) {
+    list_head_insert(first, entry);
+    count++;
+    if (count == 1) {last = first;}
+}
+//=========================== Push Back =============================//
+template <typename T>
+void deque<T>::push_back (const T& entry) {
+    if(count == 0) {
+        list_head_insert(first, entry);
+        last = first;
+    } else {
+        list_insert(last, entry);
+        last = last -> link();
+    }
+    count++;
+}
+//=========================== Pop Front =============================//
+template <typename T>
+void deque<T>::pop_front() {
+    assert(!empty());
+    list_head_remove(first);
+	--count;
+}
+//=========================== Pop Back ==============================//
+template <typename T>
+void deque<T>::pop_back() {
+    assert(!empty());
+    if (size() == 1) {
+        list_head_remove(first);
+        last=NULL;
+    } else {
+        last=list_locate(first,size()-1);
+        list_remove(last);
+    }
+    --count;
+}
+//=========================== Size ==================================//
+template <typename T>
+size_t deque<T>::size() const {
+    return count;
+}
+//=========================== Empty =================================//
+template <typename T>
+bool deque<T>::empty() const {
+    return (count == 0);
+}
+//=========================== Compare ===============================//
+template <typename U>
+bool operator == (const deque<U>& dq1, const deque<U>& dq2) {
+    if (dq1.size() != dq2.size()) {
+        return false;
+    }
+    node<U> *dq1cursor = dq1.first;
+    node<U> *dq2cursor = dq2.first;
+    for (size_t i = 0; i<dq1.size(); i++) {
+        if (dq1cursor->data() != dq2cursor->data()) {return false;}
+        dq1cursor = dq1cursor ->link();
+        dq2cursor = dq2cursor ->link();
+    }
+    return true;
+}
+//=========================== Print Deque ===========================//
+template <typename U>
+ostream& operator<< (ostream& out, const deque<U>& dq) {
+	node<U> *index=dq.first;
+	for(size_t i=0; i<dq.size(); i++){
+		out<<index->data()<<" ";
+		index=index->link();
+	}
+	out<<std::endl;
+	return out;
+}

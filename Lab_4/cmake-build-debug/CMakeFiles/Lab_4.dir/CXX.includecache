@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_4/main.cpp
+iostream
+-
+string.h
+-
+cstdlib
+-
+sequence2.h
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_4/sequence2.h
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_4/sequence2.cpp
+queue
+-
+assert.h
+-
+sequence2.h
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_4/sequence2.h
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_4/sequence2.h
+cstdlib
+-
+

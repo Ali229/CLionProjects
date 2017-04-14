@@ -1,0 +1,104 @@
+//Author: Muhammad Ali
+//Assignment #6
+//Sequence using Stacks
+
+#include <cassert>
+
+using namespace stack_sequence_4;
+using namespace std;
+//=========================== Constructor ===========================//
+template <typename T>
+sequence<T>::sequence(){}
+//=========================== Start =================================//
+template <typename T>
+void sequence<T>::start() {
+    if(!(first.empty())){
+		while(first.size()!=1){
+			T value=first.top();
+			second.push(value);
+			first.pop();
+		}
+
+	} else {
+		if(!second.empty()){
+		T value=second.top();
+		first.push(value);
+		second.pop();
+		}
+	}
+}
+//=========================== Advance ===============================//
+template <typename T>
+void sequence<T>::advance() {
+    assert(is_item());
+	if(!second.empty()){
+		T value=second.top();
+		first.push(value);
+		second.pop();
+	} else {
+	    while(!first.empty()){
+		T value=first.top();
+		second.push(value);
+		first.pop();
+		}
+	}
+}
+//=========================== Insert ================================//
+template <typename T>
+void sequence<T>::insert(const T& entry) {
+    if(!first.empty()){
+	    T value=first.top();
+		second.push(value);
+		first.pop();
+		first.push(entry);
+	} else {
+		first.push(entry);
+	}
+}
+//=========================== Attach ================================//
+template <typename T>
+void sequence<T>::attach(const T& entry) {
+    if(is_item()){
+		first.push(entry);
+	} else {
+		while(!second.empty()){
+		    T value=second.top();
+			first.push(value);
+			second.pop();
+	    }
+		first.push(entry);
+	}
+}
+//=========================== Remove_Current ========================//
+template <typename T>
+void sequence<T>::remove_current() {
+    assert(is_item());
+	first.pop();
+	if(!second.empty()){
+		T value=second.top();
+		first.push(value);
+		second.pop();
+	} else {
+        while(!first.empty()){
+		    T value=first.top();
+		    second.push(value);
+		    first.pop();
+	    }
+	}
+}
+//=========================== Size ==================================//
+template <typename T>
+std::size_t sequence<T>::size() const {
+    return first.size() + second.size();
+}
+//=========================== is_item ===============================//
+template <typename T>
+bool sequence<T>::is_item() const {
+    return (first.size()!=0);
+}
+//=========================== Current ===============================//
+template <typename T>
+T sequence<T>::current() const {
+    assert(is_item());
+    return first.top();
+}

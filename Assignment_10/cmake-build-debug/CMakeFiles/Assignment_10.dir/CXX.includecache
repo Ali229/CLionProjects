@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/AliNa/CLionProjects/Assignment_10/main.cpp
+cctype
+-
+cstdlib
+-
+iostream
+-
+table2.h
+/cygdrive/c/Users/AliNa/CLionProjects/Assignment_10/table2.h
+
+/cygdrive/c/Users/AliNa/CLionProjects/Assignment_10/table2.h
+cstdlib
+-
+list
+-
+cassert
+-
+table2.template
+/cygdrive/c/Users/AliNa/CLionProjects/Assignment_10/table2.template
+
+/cygdrive/c/Users/AliNa/CLionProjects/Assignment_10/table2.template
+

@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_9/bintree.h
+cstdlib
+-
+bintree.template
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_9/bintree.template
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_9/bintree.template
+cassert
+-
+cstdlib
+-
+iomanip
+-
+iostream
+-
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_9/main.cpp
+iostream
+-
+list
+-
+bintree.h
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_9/bintree.h
+

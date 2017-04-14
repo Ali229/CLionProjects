@@ -1,0 +1,89 @@
+//Author: Muhammad Ali
+//Assignment# 10
+//Hash Table: Array of List
+using namespace main_savitch_12B;
+template <class RecordType>
+table<RecordType>::table() {
+    total_records = 0;
+}
+
+template <class RecordType>
+table<RecordType>::table(const table& source) {
+    copy(source.data, source.data + total_records, data);
+    total_records = source.total_records;
+}
+
+template <class RecordType>
+table<RecordType>::~table() {
+}
+
+template <class RecordType>
+void table<RecordType>::insert(const RecordType &entry) {
+    assert(entry.key >= 0);
+    size_t index = hash(entry.key);
+    if (!is_present(entry.key))
+    {
+        data[index].push_back(entry);
+        ++total_records;
+    }
+    else {
+        for (typename list<RecordType>::iterator i = data[index].begin(); i != data[index].end(); ++i) {
+            if (i->key == entry.key) {
+                *i = entry;
+                break;
+            }
+        }
+    }
+}
+
+template <class RecordType>
+void table<RecordType>::remove(int key) {
+    if (is_present(key)) {
+        int index = hash(key);
+        for (typename list<RecordType>::iterator i = data[index].begin(); i != data[index].end(); ++i) {
+            if (i->key == key) {
+                data[index].erase(i);
+                --total_records;
+                return;
+            }
+        }
+    }
+}
+
+template <class RecordType>
+void table<RecordType>::operator =(const table &source) {
+    if (this != &source) {
+        copy(source.data, source.data + total_records, data);
+        total_records = source.total_records;
+    }
+}
+
+
+template <class RecordType>
+void table<RecordType>::find(int key, bool &found, RecordType &result) const {
+    size_t index = hash(key);
+    for (typename list<RecordType>::const_iterator i = data[index].begin();  i != data[index].end() ; i++) {
+        if (key == i->key) {
+            found = true;
+            result = *i;
+            return;
+        }
+    }
+    found = false;
+}
+
+template <class RecordType>
+bool table<RecordType>::is_present(int key) const {
+    size_t index = hash(key);
+    for (typename list<RecordType>::const_iterator i = data[index].begin();  i != data[index].end() ; i++) {
+        if (key == i->key) {
+            return true;
+        }
+    }
+    return false;
+}
+
+template <class RecordType>
+size_t table<RecordType>::hash(int key) const {
+    return (key % TABLE_SIZE);
+}

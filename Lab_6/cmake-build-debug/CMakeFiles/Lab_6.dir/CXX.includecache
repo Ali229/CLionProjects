@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_6/linked_list.cpp
+iostream
+-
+linked_list.h
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_6/linked_list.h
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_6/linked_list.h
+node1.h
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_6/node1.h
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_6/main.cpp
+iostream
+-
+linked_list.h
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_6/linked_list.h
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_6/node1.cpp
+node1.h
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_6/node1.h
+cassert
+-
+cstdlib
+-
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_6/node1.h
+cstdlib
+-
+

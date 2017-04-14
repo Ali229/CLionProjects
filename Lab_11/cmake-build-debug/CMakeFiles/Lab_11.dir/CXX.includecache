@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_11/heap.h
+iostream
+-
+vector
+-
+cassert
+-
+heap.template
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_11/heap.template
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_11/heap.template
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_11/main.cpp
+iostream
+-
+priority_queue.h
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_11/priority_queue.h
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_11/priority_queue.h
+heap.h
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_11/heap.h
+priority_queue.template
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_11/priority_queue.template
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_11/priority_queue.template
+

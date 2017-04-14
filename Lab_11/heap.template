@@ -1,0 +1,81 @@
+//Author: Muhammad Ali
+//Lab# 11
+//Priority Queue Using Max Heap
+
+template <typename T>
+heap<T>::heap() {
+}
+
+template <typename T>
+size_t  heap<T>::size() const {
+    return v.size();
+}
+
+template <typename T>
+bool heap<T>::is_empty() const {
+    return v.size()==0;
+}
+
+template <typename T>
+void heap<T>::insert (const T& item) {
+    v.push_back(item);
+    int last = v.size()-1;
+    int parent = (last-1)/2;
+    while (parent >= 0 && v[last] > v[parent]) {
+        T temp = v[parent];
+        v[parent] = v[last];
+        v[last] = temp;
+        last = parent;
+        parent = (last-1)/2;
+    }
+}
+
+template <typename T>
+void heap<T>::remove() {
+    assert(!is_empty());
+    v[0] = v[v.size()-1];
+    v.pop_back();
+    size_t parent = 0;
+    size_t lChild = (2*parent)+1;
+    size_t rChild = (2*parent)+2;
+    size_t max;
+    if(rChild<size()){
+        max=max_child(parent);
+    } else {
+        max=lChild;
+    }
+    while (v[parent] < v[max] && lChild<size() && lChild<size()) {
+        T temp = v[parent];
+        v[parent] = v[max];
+        v[max] = temp;
+        parent = max;
+        size_t lChild = (2*parent)+1;
+        size_t rChild = (2*parent)+2;
+        if(rChild<size()){
+            max=max_child(parent);
+        } else {
+            max=lChild;
+        }
+    }
+}
+
+template <typename T>
+T heap<T>::max() const {
+    assert(!is_empty());
+    return v.front();
+}
+
+template <typename T>
+T& heap<T>::max() {
+    assert(!is_empty());
+    return v.front();
+}
+
+template <typename T>
+size_t heap<T>::max_child (size_t index) const {
+    size_t lChild = (2*index)+1;
+    size_t rChild = (2*index)+2;
+    assert(rChild < size());
+    if (v[rChild] > v[lChild]) {return rChild;}
+    else {return lChild;}
+}
