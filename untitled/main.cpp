@@ -1,16 +1,20 @@
 #include <iostream>
-#include <list>
+#include <vector>
 
 using namespace std;
-int main ()
-{
-    int x = 0;
-    std::list<int> mylist;
-    for (int i = 0; i < 100000000 ; ++i) {
-        mylist.push_back(100);
+vector<int> arr;
+void printNumber(int n) {
+    if (n != 0) {
+        arr.push_back(n % 10);
+        printNumber(n / 10);
     }
-    cin>>x;
-    cout<< "hi"<<endl;
+}
+
+int main() {
+    printNumber(100);
+    for (int i = arr.size() -1; i >= 0; --i) {
+        cout << arr[i] <<endl;
+    }
     return 0;
 }
 
