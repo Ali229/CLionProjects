@@ -1,0 +1,3 @@
+/cygdrive/c/Users/AliNa/CLionProjects/bin_tree_length/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/c/Users/AliNa/CLionProjects/bin_tree_length/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/c/Users/AliNa/CLionProjects/bin_tree_length/cmake-build-debug/CMakeFiles/bin_tree_length.dir

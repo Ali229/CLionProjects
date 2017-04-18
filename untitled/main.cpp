@@ -1,19 +1,30 @@
 #include <iostream>
 #include <vector>
-
+#include "heap.h"
 using namespace std;
-vector<int> arr;
-void printNumber(int n) {
-    if (n != 0) {
-        arr.push_back(n % 10);
-        printNumber(n / 10);
+heap<int> h;
+template <class item>
+void heapSort(item *a, size_t count) {
+    assert (a!= NULL);
+    for (int i = 0; i <= count -1 ; ++i) {
+        h.insert(a[i]);
+    }
+    for (int j = count -1; j >=0 ; --j) {
+        a[j] = h.max();
+        h.remove();
     }
 }
 
 int main() {
-    printNumber(100);
-    for (int i = arr.size() -1; i >= 0; --i) {
-        cout << arr[i] <<endl;
+    int v[5];
+    v[0] = 10;
+    v[1] = 20;
+    v[2] = 60;
+    v[3] = 30;
+    v[4] = 1;
+    heapSort(v, 5);
+    for (int i = 0; i <= 4 ; ++i) {
+        cout << v[i] << endl;
     }
     return 0;
 }

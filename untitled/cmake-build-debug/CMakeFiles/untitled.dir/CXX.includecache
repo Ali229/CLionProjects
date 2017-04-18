@@ -6,9 +6,23 @@
 
 #IncludeRegexTransform: 
 
+/cygdrive/c/Users/AliNa/CLionProjects/untitled/heap.h
+iostream
+-
+vector
+-
+cassert
+-
+heap.template
+/cygdrive/c/Users/AliNa/CLionProjects/untitled/heap.template
+
+/cygdrive/c/Users/AliNa/CLionProjects/untitled/heap.template
+
 /cygdrive/c/Users/AliNa/CLionProjects/untitled/main.cpp
 iostream
 -
 vector
 -
+heap.h
+/cygdrive/c/Users/AliNa/CLionProjects/untitled/heap.h
 
