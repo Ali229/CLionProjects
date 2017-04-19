@@ -11,6 +11,11 @@ int num_even(const binary_tree_node<int>* node) {
     if (node->data()%2 == 0) {
         ans = 1;
     }
+    //code to check for lowercase
+    binary_tree_node<char>* node1 = new binary_tree_node<char>('b');
+    if (islower(node1->data())) {
+        cout<< "YES IT IS LOWER CASE LETTER" <<endl;
+    }
     return ans+num_even(node->left()) + num_even(node->right());
 }
 template <class Item>
@@ -78,9 +83,9 @@ int main() {
     binary_tree_node<int> *bd1 = new binary_tree_node<int>(5);
     binary_tree_node<int> *b21 = new binary_tree_node<int>(4,b1,bd1);
     binary_tree_node<int> *b31 = new binary_tree_node<int>(10,b21,NULL);
-    print(b3, 0);
+    //print(b3, 0);
     //cout<< path_length(b3, 0)<<endl;
-    //cout<< num_even(b3) <<endl;
+    cout<< num_even(b3) <<endl;
     cout<<similar(b3, b31) <<endl;
     return 0;
 }
