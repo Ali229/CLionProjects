@@ -2,7 +2,13 @@
 #include "bintree.h"
 using namespace std;
 using namespace main_savitch_10;
-
+string checkLower() {
+    //code to check for lowercase
+    binary_tree_node<char>* node1 = new binary_tree_node<char>('c');
+    if (islower(node1->data())) {
+        return "YES IT IS LOWER CASE LETTER";
+    }
+}
 int num_even(const binary_tree_node<int>* node) {
     if (node == NULL) {
         return 0;
@@ -11,11 +17,7 @@ int num_even(const binary_tree_node<int>* node) {
     if (node->data()%2 == 0) {
         ans = 1;
     }
-    //code to check for lowercase
-    binary_tree_node<char>* node1 = new binary_tree_node<char>('b');
-    if (islower(node1->data())) {
-        cout<< "YES IT IS LOWER CASE LETTER" <<endl;
-    }
+
     return ans+num_even(node->left()) + num_even(node->right());
 }
 template <class Item>
@@ -29,13 +31,12 @@ unsigned int path_length(binary_tree_node<Item>* root, const Item& target) {
     if (cursor->data() == target) {
         return 0;
     }
-    while (cursor!=NULL && cursor->data() != target) {
-        if (target<cursor->data()) {
+    while (cursor != NULL && cursor->data() != target) {
+        if (target < cursor->data()) {
             path++;
-            cursor = cursor ->left();
+            cursor = cursor->left();
 
-        }
-        else if (target>cursor->data()) {
+        } else if (target > cursor->data()) {
             path++;
             cursor = cursor->right();
 
@@ -45,8 +46,6 @@ unsigned int path_length(binary_tree_node<Item>* root, const Item& target) {
         }
     }
     return -1;
-
-
 }
 bool similar(binary_tree_node<int>* root1, binary_tree_node<int>* root2) {
     /*1. both empty */
@@ -87,5 +86,6 @@ int main() {
     //cout<< path_length(b3, 0)<<endl;
     cout<< num_even(b3) <<endl;
     cout<<similar(b3, b31) <<endl;
+    cout<< checkLower()<<endl;
     return 0;
 }
