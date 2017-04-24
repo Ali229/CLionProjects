@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_14/graph.h
+cstdlib
+-
+set
+-
+graph.template
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_14/graph.template
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_14/graph.template
+cassert
+-
+cstdlib
+-
+set
+-
+
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_14/main.cpp
+iostream
+-
+queue
+-
+graph.h
+/cygdrive/c/Users/AliNa/CLionProjects/Lab_14/graph.h
+
