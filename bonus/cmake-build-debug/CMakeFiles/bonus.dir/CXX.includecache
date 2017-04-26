@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/AliNa/CLionProjects/bonus/main.cpp
+iostream
+-
+set.h
+/cygdrive/c/Users/AliNa/CLionProjects/bonus/set.h
+
+/cygdrive/c/Users/AliNa/CLionProjects/bonus/set.h
+cstdlib
+-
+set.template
+/cygdrive/c/Users/AliNa/CLionProjects/bonus/set.template
+
+/cygdrive/c/Users/AliNa/CLionProjects/bonus/set.template
+iostream
+-
+iomanip
+-
+cassert
+-
+

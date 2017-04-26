@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/AliNa/CLionProjects/path/main.cpp
+iostream
+-
+tgmath.h
+-
+C:/Users/AliNa/Desktop/header/graph.h
+-
+
+C:/Users/AliNa/Desktop/cpp/graph.template
+cassert
+-
+cstdlib
+-
+set
+-
+
+C:/Users/AliNa/Desktop/header/graph.h
+cstdlib
+-
+set
+-
+C:/Users/AliNa/Desktop/cpp/graph.template
+-
+

@@ -1,20 +1,22 @@
 //Author: Muhammad Ali
 //Lab# 14
 //Check Directed Path
+
 #include <iostream>
 #include <queue>
 #include "graph.h"
+
 using namespace std;
 using namespace main_savitch_15;
 
-template <class Item, class SizeType>
-bool path(graph<Item>& g, SizeType start, SizeType end) {
+template <class Item>
+bool path(graph<Item>& g, size_t start, size_t end) {
         bool marked[g.MAXIMUM];
-        std::set<std::size_t> connections;
-        std::set<std::size_t>::iterator it;
-        std::queue<std::size_t> vertex_queue;
+        set<size_t> connections;
+        set<size_t>::iterator it;
+        queue<size_t> vertex_queue;
         assert(start < g.size( ));
-        std::fill_n(marked, g.size( ), false);
+        fill_n(marked, g.size( ), false);
         marked[start] = true;
         if (start == end) {return false;}
         vertex_queue.push(start);

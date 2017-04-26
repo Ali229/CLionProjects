@@ -1,0 +1,1 @@
+/usr/bin/c++.exe  -g  -Wl,--enable-auto-import CMakeFiles/bonus.dir/main.cpp.o  -o bonus.exe -Wl,--out-implib,libbonus.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
