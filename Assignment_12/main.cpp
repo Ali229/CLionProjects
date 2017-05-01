@@ -1,3 +1,6 @@
+//Author: Muhammad Ali
+//Assignment# 12
+//Social Network Graph
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -17,12 +20,11 @@ size_t get_index (const graph<string>& g, const string& target)
     size_t x;
     bool found=false;
     for(x=0;x<g.size();x++){
-        if(g[x].compare(target) == 1){
+        if(g[x].compare(target) == 0){
             found=true;
             break;
         }
     }
-    //cout<< "target is "<<target<<endl;
     assert(found);
     return x;
 }
@@ -46,7 +48,7 @@ graph<string>* create_graph (const string& file_name)
         g -> add_vertex (s);
     }
     string line;
-    while (getline (input, line))
+    while (getline (input, line) >0)
     {
         string first, second;
         tokenize (line, first, second);
@@ -86,7 +88,6 @@ set<string> friends_of_friends ( const graph<string>& network, const string& my_
     set<string> n=friends(network, my_name);//friends
     set<string> n2;
     for (set<string>::iterator i = n.begin(); i != n.end() ; ++i) {
-        cout<< *i<< endl;
         n2=friends(network,*i);//friends of friends
         fs.insert(n2.begin(), n2.end());
     }
@@ -115,6 +116,10 @@ int main() {
     cout<< "===== Printing Common Friends of John And Ali ====="<<endl;
     set<string>s2 = common_friends(*g, "John","Ali");
     printSet(s2);
+
+    cout<< "===== Printing Friends of Friends of Ali ====="<<endl;
+    set<string>s3 = friends_of_friends(*g,"Ali");
+    printSet(s3);
 
     assert(!is_friend(*g, "Bob" , "Xalika"));
     add_friend(*g, "Xalika" , "Bob");
