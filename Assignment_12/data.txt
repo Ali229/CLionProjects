@@ -1,0 +1,14 @@
+5
+Ali
+Bob
+Carter
+John
+Zac
+Ali Bob
+Ali Zac
+Ali John
+John Ali
+John Zac
+Bob John
+Bob Carter
+Carter John

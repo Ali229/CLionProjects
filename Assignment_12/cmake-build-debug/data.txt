@@ -1,0 +1,24 @@
+10
+Ali
+Bob
+Carter
+James
+John
+Matthew
+Nick
+Olive
+Xalika
+Zac
+Ali Bob
+Ali Zac
+Ali John
+Bob John
+Bob Carter
+John Ali
+John Zac
+Carter John
+Matthew Nick
+Nick Xalika
+Olive Xalika
+Xalika Zac
+Zac Ali
