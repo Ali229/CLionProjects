@@ -5,19 +5,17 @@
 #include <string>
 #include <array>
 #include <set>
-
+#include <cassert>
 using namespace std;
-int main() {
-    set<string> s1;
-    s1.insert("hello");
-    s1.insert("hi");
+int* foo (int a)
+{
+    int b =5;
+    int c = a + b;
+    return &c;
+}
 
-    for (set<string>::iterator i = s1.begin(); i != s1.end(); ++i) {
-        cout<< *i<<endl;
-        if (*i == "hi") {
-            cout << "found" <<endl;
-        }
-    }
-    std::cout << "Hello, World!" << std::endl;
+int main() {
+    int *i = foo(5);
+    cout<< i<<endl;
     return 0;
 }

@@ -1,0 +1,1 @@
+/usr/bin/c++.exe  -g  -Wl,--enable-auto-import CMakeFiles/FlipList.dir/main.cpp.o  -o FlipList.exe -Wl,--out-implib,libFlipList.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
